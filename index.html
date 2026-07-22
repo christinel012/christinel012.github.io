@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yingting (Christine) Li — Data & AI Portfolio</title>
+<meta name="description" content="Christine Li — Master of Analytics @ UC Berkeley, B.S. Statistics @ UC Davis. Data analytics, AI product, and ML portfolio." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f5f0e6;          /* light bright paper */
+    --bg-card:#fffefb;      /* cream white cards */
+    --ink:#2e2833;
+    --ink-soft:#7c7286;
+    --line:#e8dfd0;         /* warm hairline */
+    --accent:#7b6ed0;       /* periwinkle violet (brand) */
+    --accent-soft:#e7e2f7;
+    --plum:#7a4f6b;         /* muted plum for secondary */
+    --gold:#c98bab;         /* dusty rose for tertiary */
+    /* pastel window / sparkle palette */
+    --bar:#f8f3ea;
+    --dot-a:#e89ac0; --dot-b:#8fc7e8; --dot-c:#b9a6e0;
+    --sk-pink:#e89ac0; --sk-blue:#8fc7e8; --sk-purple:#b9a6e0; --sk-yellow:#ecd98a; --sk-coral:#ef9f8a; --sk-mint:#a8d9b0;
+    --spark:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cg%3E%3Crect x='10' y='10' width='2' height='2'/%3E%3Crect x='10' y='6' width='2' height='2'/%3E%3Crect x='10' y='2' width='2' height='2'/%3E%3Crect x='10' y='14' width='2' height='2'/%3E%3Crect x='10' y='18' width='2' height='2'/%3E%3Crect x='6' y='10' width='2' height='2'/%3E%3Crect x='2' y='10' width='2' height='2'/%3E%3Crect x='14' y='10' width='2' height='2'/%3E%3Crect x='18' y='10' width='2' height='2'/%3E%3Crect x='6' y='6' width='2' height='2'/%3E%3Crect x='14' y='14' width='2' height='2'/%3E%3Crect x='6' y='14' width='2' height='2'/%3E%3Crect x='14' y='6' width='2' height='2'/%3E%3C/g%3E%3C/svg%3E");
+    --shadow:0 1px 2px rgba(43,38,34,.05),0 12px 28px rgba(43,38,34,.08);
+    --radius:16px;
+    --maxw:1080px;
+  }
+  .sparkle{position:absolute;width:26px;height:26px;background:var(--sk-blue);
+    -webkit-mask:var(--spark) center/contain no-repeat;mask:var(--spark) center/contain no-repeat;
+    pointer-events:none;z-index:0;opacity:.9}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+
+  /* ---- NAV ---- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(10px);
+    background:rgba(245,240,230,.85);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:30px;font-size:.92rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--accent)}
+  @media(max-width:680px){.nav-links{display:none}}
+
+  /* ---- HERO ---- */
+  header.hero{position:relative;padding:96px 0 72px;overflow:hidden}
+  .hero-blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0}
+  .b1{width:420px;height:420px;background:var(--accent-soft);top:-120px;right:-80px}
+  .b2{width:300px;height:300px;background:#ecdcf0;bottom:-120px;left:-60px}
+  .hero-inner{position:relative;z-index:1;max-width:760px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Space Mono',monospace;
+    font-size:.78rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;
+    color:var(--accent);background:var(--accent-soft);
+    padding:6px 14px;border:1px solid #d9d2f2;border-radius:8px;margin-bottom:22px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block}
+  header.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:20px}
+  header.hero h1 em{font-style:italic;color:var(--accent)}
+  .lede{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--ink-soft);max-width:640px;margin-bottom:32px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s;
+  }
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 18px rgba(123,110,208,.30)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(123,110,208,.38)}
+  .btn-ghost{border:1px solid var(--line);background:var(--bg-card);color:var(--ink)}
+  .btn-ghost:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:38px;font-size:.9rem;color:var(--ink-soft)}
+  .hero-meta b{color:var(--ink);font-weight:600}
+
+  /* ---- SECTION ---- */
+  section{padding:72px 0;position:relative}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:14px}
+  .sec-num{font-family:'Space Mono',monospace;color:var(--accent);font-size:.95rem;font-weight:700}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.5rem)}
+  .sec-sub{color:var(--ink-soft);max-width:620px;margin-bottom:44px}
+
+  /* ---- ABOUT ---- */
+  .about-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:start}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:32px}}
+  .about-grid p{margin-bottom:16px;color:#453f38}
+  .about-grid p strong{color:var(--ink)}
+  .facts{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .facts h3{font-size:1.05rem;margin-bottom:18px}
+  .fact{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+  .fact:last-child{border-bottom:none}
+  .fact span:first-child{color:var(--ink-soft)}
+  .fact span:last-child{font-weight:600;text-align:right}
+
+  /* ---- PROJECTS ---- */
+  .projects{display:flex;flex-direction:column;gap:30px}
+  .card{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:58px 34px 34px;box-shadow:var(--shadow);transition:transform .22s ease, box-shadow .22s ease;
+    position:relative;overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:40px;background:var(--bar);border-bottom:1px solid var(--line)}
+  .card::after{content:"";position:absolute;top:16px;left:20px;width:9px;height:9px;border-radius:50%;background:var(--dot-a);box-shadow:16px 0 0 var(--dot-b),32px 0 0 var(--dot-c)}
+  .win-title{position:absolute;top:0;left:0;right:0;height:40px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:.76rem;letter-spacing:.02em;color:var(--ink-soft);pointer-events:none}
+  .card:hover{transform:translateY(-4px);box-shadow:0 6px 14px rgba(43,38,34,.08),0 22px 44px rgba(43,38,34,.12)}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  .card h3{font-size:1.5rem}
+  .flag{font-family:'Space Mono',monospace;font-size:.68rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:5px 11px;border-radius:6px;white-space:nowrap}
+  .card.plum .flag{color:var(--plum);background:#e7e1ee}
+  .card.gold .flag{color:#8a4f6b;background:#f4e2ec}
+  .card .role{color:var(--ink-soft);font-size:.9rem;margin-bottom:18px}
+  .card ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:22px}
+  .card li{position:relative;padding-left:22px;font-size:.96rem;color:#453f38}
+  .card li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--accent);transform:rotate(45deg)}
+  .card.plum li::before{background:var(--plum)}
+  .card.gold li::before{background:var(--gold)}
+  .card li b{color:var(--ink);font-weight:600}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+  .tag{font-family:'Space Mono',monospace;font-size:.74rem;font-weight:400;color:var(--ink-soft);background:var(--bg);border:1px solid var(--line);padding:4px 10px;border-radius:6px}
+  .card-links{display:flex;gap:12px;flex-wrap:wrap}
+  .card-links a{display:inline-flex;align-items:center;gap:7px;font-size:.9rem;font-weight:600;color:var(--accent);padding:8px 14px;border:1px solid var(--accent-soft);border-radius:999px;transition:background .18s,transform .18s}
+  .card-links a:hover{background:var(--accent-soft);transform:translateY(-1px)}
+  .card.plum .card-links a{color:var(--plum);border-color:#e7e1ee}
+  .card.plum .card-links a:hover{background:#e7e1ee}
+  .card.gold .card-links a{color:#8a4f6b;border-color:#f4e2ec}
+  .card.gold .card-links a:hover{background:#f4e2ec}
+  .arrow{transition:transform .18s}
+  .card-links a:hover .arrow{transform:translate(2px,-2px)}
+
+  /* ---- SKILLS ---- */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .skill-box{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow)}
+  .skill-box h4{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:14px}
+  .skill-box .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:'Space Mono',monospace;font-size:.78rem;font-weight:400;background:var(--bg);border:1px solid var(--line);padding:5px 11px;border-radius:6px}
+
+  /* ---- EDUCATION ---- */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:680px){.edu-grid{grid-template-columns:1fr}}
+  .edu{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .edu .when{font-family:'Space Mono',monospace;font-size:.74rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.02em;margin-bottom:10px}
+  .edu h3{font-size:1.25rem;margin-bottom:4px}
+  .edu .deg{color:var(--ink-soft);font-size:.95rem;margin-bottom:14px}
+  .edu .gpa{display:inline-block;font-weight:600;font-size:.9rem;background:var(--accent-soft);color:var(--accent);padding:4px 12px;border-radius:999px}
+  .edu ul{list-style:none;margin-top:14px;font-size:.88rem;color:var(--ink-soft);display:flex;flex-direction:column;gap:6px}
+  .edu ul li::before{content:"—  ";color:var(--accent)}
+
+  /* ---- CONTACT ---- */
+  .contact{background:linear-gradient(135deg,#2b2833,#3b3450);color:#f3eff8;border-radius:26px;padding:56px 44px;text-align:center;position:relative;overflow:hidden}
+  .contact::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(123,110,208,.32);filter:blur(70px);top:-120px;right:-80px}
+  .contact h2{color:#fff;font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:14px;position:relative}
+  .contact p{color:#d0c8de;max-width:520px;margin:0 auto 30px;position:relative}
+  .contact .cta-row{justify-content:center;position:relative}
+  .contact .btn-ghost{background:transparent;border-color:rgba(255,255,255,.25);color:#fff}
+  .contact .btn-ghost:hover{border-color:var(--accent)}
+
+  footer{padding:40px 0 56px;text-align:center;color:var(--ink-soft);font-size:.85rem}
+  footer a{color:var(--accent);font-weight:600}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Christine <span>Li</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <span class="sparkle" style="top:78px;right:64px;width:30px;height:30px;background:var(--sk-pink)"></span>
+  <span class="sparkle" style="top:158px;right:184px;background:var(--sk-blue)"></span>
+  <span class="sparkle" style="top:250px;right:96px;width:20px;height:20px;background:var(--sk-yellow)"></span>
+  <span class="sparkle" style="top:344px;right:230px;background:var(--sk-purple)"></span>
+  <span class="sparkle" style="bottom:64px;left:44px;width:22px;height:22px;background:var(--sk-coral)"></span>
+  <span class="sparkle" style="top:130px;left:-6px;width:18px;height:18px;background:var(--sk-mint);opacity:.8"></span>
+  <div class="wrap hero-inner">
+    <span class="eyebrow"><span class="dot"></span>Data · AI Product · Machine Learning</span>
+    <h1>I build and ship data products, <em>end to end</em>.</h1>
+    <p class="lede">I'm Christine Li, a Master of Analytics student at UC Berkeley with a B.S. in Statistics from UC Davis. I build end-to-end data products: from raw API ingestion and modeling to deployed, human-readable apps.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn btn-primary">View my work →</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Résumé</a>
+      <a href="https://www.linkedin.com/in/christineli012" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      <a href="https://github.com/christinel012" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>264K+</b> photos processed</div>
+      <div><b>112K+</b> listings modeled</div>
+      <div><b>3</b> deployed apps</div>
+      <div><b>Python</b> · SQL · R</div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>About</h2></div>
+    <div class="about-grid reveal">
+      <div>
+        <p>I work at the intersection of <strong>strong statistical fundamentals</strong> and <strong>shippable products</strong>. My background is theory first, built on probability, regression, variance analysis, and linear algebra. I care just as much, though, about whether the final thing is deployed, reproducible, and understandable to a non-technical person.</p>
+        <p>My favorite part of a project is the <strong>evidence-driven revision</strong>: shipping a first model, finding where it breaks, and fixing it because the data told me to. Once I replaced raw photo counts with unique-photographer counts after single-user clusters gamed my rankings, and I normalized time-of-day fit so golden hour spots stopped getting buried. Those iterations are the work I'm proudest of.</p>
+        <p>I'm targeting roles in <strong>Data Analytics, AI Product, and ML</strong>. Outside of data, I'm a photographer, which is exactly how my hotspot recommender started.</p>
+      </div>
+      <div class="facts">
+        <h3>At a glance</h3>
+        <div class="fact"><span>Based in</span><span>Berkeley, CA</span></div>
+        <div class="fact"><span>Now</span><span>Master of Analytics, UC Berkeley</span></div>
+        <div class="fact"><span>Prior</span><span>B.S. Statistics, UC Davis</span></div>
+        <div class="fact"><span>Focus</span><span>Data · AI Product · ML</span></div>
+        <div class="fact"><span>Core stack</span><span>Python · SQL · R</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <span class="sparkle" style="top:96px;right:40px;width:24px;height:24px;background:var(--sk-blue)"></span>
+  <span class="sparkle" style="top:150px;left:24px;width:18px;height:18px;background:var(--sk-coral);opacity:.75"></span>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Selected work</h2></div>
+    <p class="sec-sub">Three end-to-end projects, each taken from raw data all the way to a live, deployed app.</p>
+    <div class="projects">
+
+      <article class="card reveal">
+        <span class="win-title">shoot_here.py</span>
+        <div class="card-top">
+          <h3>Shoot Here — Photography Hotspot Recommender</h3>
+          <span class="flag">Flagship · Solo</span>
+        </div>
+        <div class="role">Recommendation engine · Jul 2026</div>
+        <ul>
+          <li>Built an end-to-end engine over <b>264K geotagged photos</b>, engineering a pipeline that ingests via the Flickr API, clusters photos into <b>483 ranked locations</b> (DBSCAN, haversine), and enriches them through the Google Places API — all cached for full reproducibility.</li>
+          <li>Designed a composite <b>"photogenicity" scoring model</b> and revised it three times from evidence — e.g. replacing raw photo count with unique-photographer count after single-user clusters gamed the rankings — plus a baseline-normalized time-of-day fit that surfaces golden-hour specialists.</li>
+          <li>Shipped a deployed multi-page app backed by a <b>SQLite database</b> serving live parameterized ranking queries, translating model outputs into plain-language recommendations for a non-technical user.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">SQL / SQLite</span><span class="tag">scikit-learn (DBSCAN)</span><span class="tag">GeoPandas</span><span class="tag">astral</span><span class="tag">Streamlit</span><span class="tag">Flickr + Google Places API</span>
+        </div>
+        <div class="card-links">
+          <a href="https://shoot-here.streamlit.app/" target="_blank" rel="noopener">Live App <span class="arrow">↗</span></a>
+          <a href="https://github.com/christinel012/photography-hotspot-finder" target="_blank" rel="noopener">Source Code <span class="arrow">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card plum reveal">
+        <span class="win-title">neighborhood_impact.ipynb</span>
+        <div class="card-top">
+          <h3>Airbnb Neighborhood Impact</h3>
+          <span class="flag">Flagship · Solo</span>
+        </div>
+        <div class="role">Housing-affordability analysis &amp; dashboard · Apr 2026</div>
+        <ul>
+          <li>Engineered an automated pipeline ingesting <b>112,892 Airbnb listings</b> across 5 US cities from InsideAirbnb, with dynamic date detection requiring no manual URL updates.</li>
+          <li>Trained a <b>LightGBM model (R²=0.708)</b> to predict neighborhood activity scores and applied SHAP analysis to identify occupancy and commercial-host rate as dominant predictors — finding that city identity ranks last.</li>
+          <li>Deployed a <b>6-tab interactive Streamlit dashboard</b> with choropleth maps, interactive SHAP exploration, and dark-themed data storytelling.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">LightGBM</span><span class="tag">SHAP</span><span class="tag">GeoPandas</span><span class="tag">Plotly</span><span class="tag">Streamlit</span>
+        </div>
+        <div class="card-links">
+          <a href="https://airbnb-neighborhood-impact-cdi7dburmqbfcogckhrjdg.streamlit.app/" target="_blank" rel="noopener">Live Dashboard <span class="arrow">↗</span></a>
+          <a href="https://github.com/christinel012/airbnb-neighborhood-impact" target="_blank" rel="noopener">Source Code <span class="arrow">↗</span></a>
+        </div>
+      </article>
+
+      <article class="card gold reveal">
+        <span class="win-title">price_explorer.jsx</span>
+        <div class="card-top">
+          <h3>Airbnb Price Explorer</h3>
+          <span class="flag">Team · Web app</span>
+        </div>
+        <div class="role">Visualizing travel affordability · Oct – Dec 2025</div>
+        <ul>
+          <li>Co-developed an interactive analytics website in <b>React (JavaScript)</b>.</li>
+          <li>Built an <b>LSTM-based sequential regression model</b> to predict Airbnb prices from time-stamped seasonal snapshots, capturing nonlinear and temporal pricing patterns.</li>
+          <li>Designed <b>interactive Leaflet maps</b> for five cities to visualize spatial price clustering and neighborhood-level affordability.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">LSTM</span><span class="tag">Leaflet</span>
+        </div>
+        <div class="card-links">
+          <a href="https://himmattoor.github.io/AirbnbWebsite/#/" target="_blank" rel="noopener">Live Demo <span class="arrow">↗</span></a>
+          <a href="https://github.com/HimmatToor/AirbnbWebsite" target="_blank" rel="noopener">Source Code <span class="arrow">↗</span></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Skills &amp; tools</h2></div>
+    <p class="sec-sub">Theory-first foundations, product-minded execution.</p>
+    <div class="skill-grid reveal">
+      <div class="skill-box">
+        <h4>Languages</h4>
+        <div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">MATLAB</span><span class="chip">JavaScript</span><span class="chip">LaTeX</span></div>
+      </div>
+      <div class="skill-box">
+        <h4>ML &amp; Data</h4>
+        <div class="chips"><span class="chip">scikit-learn</span><span class="chip">LightGBM</span><span class="chip">SHAP</span><span class="chip">LSTM / Deep Learning</span><span class="chip">DBSCAN</span><span class="chip">pandas</span><span class="chip">GeoPandas</span></div>
+      </div>
+      <div class="skill-box">
+        <h4>Build &amp; Deploy</h4>
+        <div class="chips"><span class="chip">Streamlit</span><span class="chip">React</span><span class="chip">SQLite</span><span class="chip">Plotly</span><span class="chip">Leaflet</span><span class="chip">REST APIs</span></div>
+      </div>
+      <div class="skill-box">
+        <h4>Foundations</h4>
+        <div class="chips"><span class="chip">Probability</span><span class="chip">Regression</span><span class="chip">Variance Analysis</span><span class="chip">Linear Algebra</span><span class="chip">Multivariable Calculus</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Education</h2></div>
+    <div class="edu-grid reveal">
+      <div class="edu">
+        <div class="when">Expected May 2027</div>
+        <h3>UC Berkeley</h3>
+        <div class="deg"><a href="https://grad.berkeley.edu/program/master-of-analytics-manlytx/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:var(--line)">Master of Analytics (MAnlytx)</a> · Berkeley, CA</div>
+      </div>
+      <div class="edu">
+        <div class="when">Expected June 2026</div>
+        <h3>UC Davis</h3>
+        <div class="deg">B.S. Statistics · Minor in Mathematics · Davis, CA</div>
+        <span class="gpa">GPA 3.95 / 4.0</span>
+        <ul>
+          <li>Dean's Honor List (2023–2024)</li>
+          <li>NVIDIA — Fundamentals of Deep Learning</li>
+          <li>Coursework: Probability, Regression, Variance Analysis, Applied Linear Algebra</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <span class="sparkle" style="top:34px;left:44px;width:22px;height:22px;background:var(--sk-yellow);opacity:.85"></span>
+      <span class="sparkle" style="bottom:40px;right:56px;width:26px;height:26px;background:var(--sk-blue);opacity:.85"></span>
+      <h2>Let's build something with data.</h2>
+      <p>I'm open to opportunities in Data Analytics, AI Product, and ML. The fastest way to reach me is email — I'd love to talk.</p>
+      <div class="cta-row">
+        <a href="mailto:ytingli0210@gmail.com" class="btn btn-primary">Email me →</a>
+        <a href="https://www.linkedin.com/in/christineli012" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/christinel012" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Yingting (Christine) Li · Davis, CA · <a href="mailto:ytingli0210@gmail.com">ytingli0210@gmail.com</a> · (530) 551-3068
+    <br />Built from scratch · <span id="year"></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
